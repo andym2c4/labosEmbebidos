@@ -1,0 +1,105 @@
+#include <voltimetro.h>
+/*
+------------------------------------VOLTIMETRO --------------------------------
+Realizado por: Andy Montes Chuñocca
+Correo:        andy.montes.c@uni.pe
+Circuito que lee 8 entradas de voltaje, y mediante un keypad el usuario puede solicitar el voltaje y la conversion bits de cada entrada
+Se utiliza un cristal de 20MHz, el muestreo se realiza utilizando el TMR0 a un tiempo de muestreo
+de 10ms, con un convertidor A/D de 10 bits.
+
+El funcionamiento es el siguiente:
+   - El lcd muestra un mensaje de bienvenida y el menu principal
+   - Si presionan la tecla A: se realiza una lectura automatica del voltaje de 8 pines, cada voltaje demora 2 segundos
+   - Si presionan la tecla B: muestra los 8 resultados de voltaje
+   - Si presionan la tecla C: el usuario podra solicitar los datos de voltaje (0-5) y valor de conversion (0-1023) 
+      de un pin en especifico
+
+Conexiones:
+El LCD se esta conectando a los puertos D
+El keypad se esta conectado al puerto B
+Las entradas de voltaje al puerto A
+*/
+//incluimos el archivo kdb.c que incluye las funciones para el uso del keypad 4x4
+#define use_portb_kbd TRUE
+#include <kbd4x4.c>
+//definimos los pines para el lcd
+#define  lcd_ENABLE_PIN PIN_D3
+#define  lcd_RS_PIN PIN_D1
+#define  lcd_RW_PIN PIN_D2
+#define  lcd_data4 PIN_D4
+#define  lcd_data5 PIN_D5
+#define  lcd_data6 PIN_D6
+#define  lcd_data7 PIN_D7
+#define  lcd_TYPE 2
+//incluimos el archivo lcd
+#include <lcd.c>
+
+/*
+Declaracion de Variables
+*/
+int valor=0,empezar=0;
+char botonPresionado;
+//interrupcion interna de timer 0----------------------------------------
+#int_TIMER0
+void TIMER0_isr(void){
+   set_timer0(60);//calculado. setea la interrupcion. Seteo para ingresar cada 10ms
+}
+
+void INT_Init(){
+   enable_interrupts(GLOBAL);
+   enable_interrupts(INT_TIMER0);
+}
+
+void MCU_Init(){//configuracion de puertos y otros modulos
+   //----------------Configuracion del Timer0 ------------------------
+   setup_timer_0 (RTCC_INTERNAL |RTCC_DIV_256);
+   set_timer0(60);
+   //----------------Inicializar el LCD------------------------------
+   lcd_init();
+   //----------------Inicializar el Keypad------------------------------
+   kbd_init();
+   port_b_pullups(true);
+   
+}
+void pantallaBienvenida(){//menu principal, se mostrara de inmediato, al iniciar la alimentacion del circuito
+   /*
+   Mostraremos el mensaje de bienvenida , solicitaremos que el usuario ingrese una opcion, limpiaremos la pantalla
+   y señalaremos en que consiste las opciones a poder ingresar
+   */
+   
+   lcd_putc("\f    Bienvenido  \nElija su opcion: ");
+   delay_ms(500);
+   lcd_putc("\fA. Leer Voltaje\nB. Ver valores");
+   delay_ms(500);
+   lcd_putc("\fC. Info de un\n pin especifico");
+   delay_ms(500);
+}
+
+void main()
+{
+   MCU_Init();
+   INT_Init();
+   while(TRUE){
+      pantallaBienvenida();
+      int empezar=0;
+      while(~empezar){
+         for(int i=0;i<100;i++){
+            lcd_putc("\fIngrese Opcion :");
+            delay_ms(30);
+            botonPresionado = kbd_getc();
+            if(botonPresionado=='A'){
+               empezar=1;
+               lcd_putc("\f :)");
+               delay_ms(2000);
+               break;
+            }
+         }
+         break;
+      }
+      
+      
+      
+   }
+   
+
+}

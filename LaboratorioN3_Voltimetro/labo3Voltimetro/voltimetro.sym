@@ -1,0 +1,277 @@
+004-005 @WRITE_PROGRAM_MEMORY8.P1
+004-005 @READ_PROGRAM_MEMORY8.P2
+006     PORTB
+006     kbd
+008     PSP_DATA
+015     CCP_1
+015     CCP_1_LOW
+016     CCP_1_HIGH
+01B     CCP_2_LOW
+01B     CCP_2
+01C     CCP_2_HIGH
+020     @INTERRUPT_AREA
+021     @INTERRUPT_AREA
+022     @INTERRUPT_AREA
+023     @INTERRUPT_AREA
+024     @INTERRUPT_AREA
+025     @INTERRUPT_AREA
+026     @INTERRUPT_AREA
+027     @INTERRUPT_AREA
+028     @INTERRUPT_AREA
+029     @INTERRUPT_AREA
+02A     @INTERRUPT_AREA
+02B     @INTERRUPT_AREA
+02C     kbd_getc.kbd_call_count
+02D.0   kbd_getc.kbd_down
+02E     kbd_getc.last_key
+02F     kbd_getc.col
+030     empezar
+031     botonPresionado
+032-041 lecturaA
+042-061 voltajeA
+062     MAIN.empezar
+063     MAIN.i
+064     opcionC.solicitar
+064     lcd_init.i
+064     opcionA.i
+064     pantallaBienvenida.@SCRATCH1
+064     opcionB.@SCRATCH1
+065     opcionC.numero
+065-068 lcd_init.LCD_INIT_STRING
+065     opcionA.@SCRATCH1
+066     @PRINTF_D_662.P1
+066-067 @PRINTF_LD_662.P2
+066     kbd_getc.kchar
+066     @PSTRINGC7_662.@SCRATCH1
+066     opcionA.@SCRATCH2
+066     opcionC.@SCRATCH1
+067     kbd_getc.row
+067     @PRINTF_D_662.P1
+067     @PSTRINGC7_662.@SCRATCH2
+067     opcionA.@SCRATCH3
+068     kbd_getc.@SCRATCH1
+068     @PSTRINGC7_662.@SCRATCH3
+068     opcionA.@SCRATCH4
+068     @PRINTF_D_662.@SCRATCH1
+068     @PRINTF_LD_662.@SCRATCH1
+069     @PSTRINGCN7_662.P1
+069-06C @PRINTF_L32D_662FPFPF.P2
+069     lcd_init.@SCRATCH1
+069     @PSTRINGC7_662.@SCRATCH4
+069     @PRINTF_D_662.@SCRATCH2
+069     @PRINTF_LD_662.@SCRATCH2
+06A     @PSTRINGCN7_662.@SCRATCH1
+06A     @PRINTF_D_662.@SCRATCH3
+06A     @PRINTF_LD_662.@SCRATCH3
+06B     @PSTRINGCN7_662.@SCRATCH2
+06B     @PRINTF_D_662.@SCRATCH4
+06B     @PRINTF_LD_662.@SCRATCH4
+06C     @DIV88.P1
+06C     @PSTRINGCN7_662.@SCRATCH3
+06C     @PRINTF_LD_662.@SCRATCH5
+06D     @PRINTF_L32D_662FPFPF.P1
+06D     @DIV88.P2
+06D     @PSTRINGCN7_662.@SCRATCH4
+06D     @PRINTF_LD_662.@SCRATCH6
+06E     @DIV88.@SCRATCH1
+06E     @PRINTF_L32D_662FPFPF.@SCRATCH1
+06E     @PRINTF_LD_662.@SCRATCH7
+06F     @PRINTF_L32D_662FPFPF.@SCRATCH2
+070     @PRINTF_L32D_662FPFPF.@SCRATCH3
+071     @PRINTF_L32D_662FPFPF.@SCRATCH4
+072     @PRINTF_L32D_662FPFPF.@SCRATCH5
+073     @PRINTF_L32D_662FPFPF.@SCRATCH6
+074     @PRINTF_L32D_662FPFPF.@SCRATCH7
+075     @PRINTF_L32D_662FPFPF.@SCRATCH8
+076     lcd_putc.c
+076     @FTOSD.@SCRATCH1
+077     @SCRATCH
+078     @SCRATCH
+078     _RETURN_
+079     @SCRATCH
+07A     @SCRATCH
+07B     lcd_gotoxy.x
+07B-07E @FTOSD.P1
+07B     @delay_ms1.P2
+07B-07E @DIV3232.P3
+07C     lcd_gotoxy.y
+07D     lcd_gotoxy.address
+07E     lcd_gotoxy.@SCRATCH1
+07F     @INTERRUPT_AREA
+086     PORTD
+086     TRISB
+09C.6   C1OUT
+09C.7   C2OUT
+0A0     lcd_send_byte.address
+0A0-0A3 @DIV3232.P1
+0A1     lcd_send_byte.n
+0A2     lcd_read_byte.low
+0A2     lcd_send_byte.@SCRATCH1
+0A3     lcd_read_byte.high
+0A3     lcd_send_nibble.n
+0A4     lcd_read_nibble.n
+0A4     lcd_read_byte.@SCRATCH1
+0A4     @DIV3232.@SCRATCH1
+0A5     lcd_read_nibble.@SCRATCH1
+0A5     @DIV3232.@SCRATCH2
+0A6     @DIV3232.@SCRATCH3
+0A7     @DIV3232.@SCRATCH4
+0A8     @DIV3232.@SCRATCH5
+0AA     TIMER0_isr.i
+0AB     getPortA.n
+0AC     getPortA.@SCRATCH1
+0AD     getPortA.@SCRATCH2
+0AE     getPortA.@SCRATCH3
+0AF     getPortA.@SCRATCH4
+0B0-0B1 @ITOF.P1
+0B0-0B3 @MULFF.P2
+0B0     getPortA.@SCRATCH5
+0B1     getPortA.@SCRATCH6
+0B2-0B5 @DIVFF.P1
+0B4-0B7 @MULFF.P1
+0B6-0B9 @DIVFF.P1
+0B8     @MULFF.@SCRATCH1
+0B9     @MULFF.@SCRATCH2
+0BA     @MULFF.@SCRATCH3
+0BA     @DIVFF.@SCRATCH1
+0BB     @MULFF.@SCRATCH4
+0BB     @DIVFF.@SCRATCH2
+0BC     @MULFF.@SCRATCH5
+0BC     @DIVFF.@SCRATCH3
+0BD     @DIVFF.@SCRATCH4
+0BE     @DIVFF.@SCRATCH5
+0BF     @DIVFF.@SCRATCH6
+0FF     @INTERRUPT_AREA
+10D-10E @READ_PROGRAM_MEMORY8.P1
+10D-10E @WRITE_PROGRAM_MEMORY8.P2
+17F     @INTERRUPT_AREA
+1FF     @INTERRUPT_AREA
+27F     @INTERRUPT_AREA
+2FF     @INTERRUPT_AREA
+37F     @INTERRUPT_AREA
+3FF     @INTERRUPT_AREA
+47F     @INTERRUPT_AREA
+4FF     @INTERRUPT_AREA
+57F     @INTERRUPT_AREA
+5FF     @INTERRUPT_AREA
+67F     @INTERRUPT_AREA
+6FF     @INTERRUPT_AREA
+77F     @INTERRUPT_AREA
+7FF     @INTERRUPT_AREA
+87F     @INTERRUPT_AREA
+8FF     @INTERRUPT_AREA
+97F     @INTERRUPT_AREA
+9FF     @INTERRUPT_AREA
+A7F     @INTERRUPT_AREA
+AFF     @INTERRUPT_AREA
+B7F     @INTERRUPT_AREA
+BFF     @INTERRUPT_AREA
+C7F     @INTERRUPT_AREA
+CFF     @INTERRUPT_AREA
+D7F     @INTERRUPT_AREA
+DFF     @INTERRUPT_AREA
+E7F     @INTERRUPT_AREA
+EFF     @INTERRUPT_AREA
+F7F     @INTERRUPT_AREA
+FFF     @INTERRUPT_AREA
+
+ROM Allocation:
+00004F  KEYS.call
+000053  KEYS.data
+000063  @MULFF
+0000DA  TIMER0_isr
+0000E4  getPortA
+000125  @ITOF
+000167  @DIVFF
+00024F  @const686.call
+000261  @const688.call
+000271  @const689.call
+000281  @const700.call
+000289  @const709.call
+00028F  @const719.call
+000297  @const720.call
+00029E  @const721.call
+0002A6  @const722.call
+0002AD  @const725.call
+0002BA  @const727.call
+0002BE  @const728.call
+0002C3  @const731.call
+0002C7  @const732.call
+0002CC  @const733.call
+0002D0  @const734.call
+0002D5  @const735.call
+0002D9  @const736.call
+0002DE  @const737.call
+0002E2  @const738.call
+0002E7  @const739.call
+0002EB  @const740.call
+0002F0  @const741.call
+0002F4  @const742.call
+0002F9  @const743.call
+0002FD  @const744.call
+000302  @const750.call
+00030B  @delay_ms1
+00031F  lcd_send_nibble
+000359  lcd_read_nibble
+00038C  lcd_send_byte
+000394  lcd_read_byte
+0003F0  MCU_Init
+0003F0  lcd_init
+00043B  kbd_init
+00043D  INT_Init
+000441  AD_init
+000459  lcd_gotoxy
+00046D  lcd_putc
+00049F  @PSTRINGC7_662
+0004F5  pantallaBienvenida
+000522  kbd_getc
+000589  @goto10574
+000591  @PSTRINGCN7_662
+0005E8  @DIV88
+0005FD  @DIV3232
+00064E  @PRINTF_L32D_662FPFPF
+000683  @FTOSD
+000740  opcionA
+00075A  @PRINTF_D_662
+000800  opcionB
+000921  @PRINTF_LD_662
+0009A3  opcionC
+000C59  @cinit1
+000C59  MAIN
+000C64  @cinit2
+
+Project Directory:
+    G:\Mi unidad\2021-2\MT136 - Sistemas Embebidos B\practicandoando\labo3Voltimetro\
+
+Project Files:
+    voltimetro.c                                            [20-nov.-21 15:39  CRC=BCA566CB]
+    voltimetro.h                                            [20-nov.-21 14:26  CRC=2EB8624F]
+    C:\Program Files (x86)\PICC\Devices\16F877A.h           [18-abr.-14 16:56  CRC=4F277C97]
+    kbd4x4.c                                                [20-nov.-21 12:29  CRC=C151757D]
+    C:\Program Files (x86)\PICC\Drivers\lcd.c               [19-sep.-13 15:38  CRC=D1A6378A]
+
+Source signature=9F232A42
+
+Units:
+    voltimetro (main)
+
+Compiler Settings:
+    Processor:      PIC16F877A
+    Pointer Size:   16
+    ADC Range:      0-1023
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+    Compile Mode:       CCS5
+
+Output Files:
+    XREF file:   voltimetro.xsym
+    Errors:      voltimetro.err
+    Ext Symbols: voltimetro.esym
+    INHX8:       voltimetro.hex
+    Symbols:     voltimetro.sym
+    List:        voltimetro.lst
+    Debug/COFF:  voltimetro.cof
+    Project:     voltimetro.ccspjt
+    Call Tree:   voltimetro.tre
+    Statistics:  voltimetro.STA

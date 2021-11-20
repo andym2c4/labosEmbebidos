@@ -1,0 +1,49 @@
+[PROJECT]
+Target=voltimetro.hex
+Processor_Text=PIC16F877A
+CCSVerions=5.025
+Compiler=PCM
+CCSVersion=5.025
+[Target Data]
+FileList=voltimetro.c
+[Directories]
+Include=
+[G:\Mi unidad\2021-2\MT136 - Sistemas Embebidos B\practicandoando\labo3Voltimetro\voltimetro]
+Type=4
+[mru-list]
+1=voltimetro.c
+
+[ProjectLog]
+Days=1
+D1=20-11-2021
+D1_L=14
+D1_L1=[40841]Project Opened.
+D1_L2=[40852]Started Editing.
+D1_L3=[42356]Stopped Editing.
+D1_L4=[42673]Started Editing.
+D1_L5=[44326]Stopped Editing.
+D1_L6=[44378]Started Editing.
+D1_L7=[45270]Stopped Editing.
+D1_L8=[45293]Started Editing.
+D1_L9=[46933]Stopped Editing.
+D1_L10=[47052]Started Editing.
+D1_L11=[47494]Stopped Editing.
+D1_L12=[47622]Started Editing.
+D1_L13=[50109]Stopped Editing.
+D1_L14=[50833]Started Editing.
+
+[Opened Files]
+1=voltimetro.c
+2=C:\Program Files (x86)\PICC\Drivers\lcd.c
+3=..\Proy_3_voltimetro\voltimetro.c
+4=..\lcd\main.c
+5=kbd4x4.c
+6=..\prueba2\main.c
+7=C:\Program Files (x86)\PICC\Devices\16F877A.h
+8=voltimetro.h
+9=
+[voltimetro.c]
+Type=4
+[Units]
+Count=1
+1=voltimetro (main)

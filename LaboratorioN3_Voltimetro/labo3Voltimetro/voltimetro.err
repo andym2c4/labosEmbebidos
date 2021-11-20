@@ -1,0 +1,4 @@
+>>> Warning 216 "voltimetro.c" Line 222(1,2): Interrupts disabled during call to prevent re-entrancy:  (@MULFF)
+      Memory usage:   ROM=39%      RAM=19% - 35%
+      0 Errors,  1 Warnings.
+Build Successful.
