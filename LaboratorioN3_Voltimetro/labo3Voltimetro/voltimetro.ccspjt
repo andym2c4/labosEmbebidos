@@ -16,7 +16,7 @@ Type=4
 [ProjectLog]
 Days=1
 D1=20-11-2021
-D1_L=14
+D1_L=18
 D1_L1=[40841]Project Opened.
 D1_L2=[40852]Started Editing.
 D1_L3=[42356]Stopped Editing.
@@ -31,10 +31,18 @@ D1_L11=[47494]Stopped Editing.
 D1_L12=[47622]Started Editing.
 D1_L13=[50109]Stopped Editing.
 D1_L14=[50833]Started Editing.
+D1_L15=[56728]Stopped Editing.
+TotalEdit=212
+TotalDebug=0
+D1_E=212
+D1_D=0
+D1_L16=[56729]Project Closed.
+D1_L17=[65405]Project Opened.
+D1_L18=[65431]Started Editing.
 
 [Opened Files]
 1=voltimetro.c
-2=C:\Program Files (x86)\PICC\Drivers\lcd.c
+2=
 3=..\Proy_3_voltimetro\voltimetro.c
 4=..\lcd\main.c
 5=kbd4x4.c

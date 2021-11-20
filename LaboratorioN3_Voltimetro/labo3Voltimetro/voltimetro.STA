@@ -1,5 +1,5 @@
 
-ROM used:   3230/8192 (39%)
+ROM used:   3232/8192 (39%)
             3241/8192 (40%) including unused fragments
 
             2.2 Average locations per line
@@ -24,10 +24,10 @@ Lines Stmts  %   Files
 Page ROM  %  RAM    Vol Diff  Functions:
 ---- --- --- ---    --- ----  ----------
 0     20   1    1             @delay_ms1
-0     20   1    0    760  4.5  @const625
+0     20   1    0             @const625
  Inline         0      3  0.0  kbd_init
 0    103   3    3   5893  9.9  kbd_getc
-0      8   0    0    415  3.7  @goto10574
+0      8   0    0             @goto10574
  Inline         3    760  4.5  lcd_read_byte
 0     51   2    2    262  3.7  lcd_read_nibble
 0     58   2    1    399  2.4  lcd_send_nibble
@@ -35,40 +35,40 @@ Page ROM  %  RAM    Vol Diff  Functions:
  Inline         6    852  6.2  lcd_init
 0     20   1    4    208  6.3  lcd_gotoxy
 0     50   2    1    354  4.7  lcd_putc
-0    373  12    0    108  3.0  TIMER0_isr
+0    375  12    0    108  3.0  TIMER0_isr
  Inline         0     32  1.0  AD_init
  Inline         0     32  1.0  INT_Init
 0    105   3    0    114  1.7  MCU_Init
 0     45   1    1    108  1.2  pantallaBienvenida
-0     18   1    0     14  0.8  @const686
-0     86   3    4    163  3.2  @PSTRINGC7_662
+0     18   1    0             @const686
+0     86   3    4             @PSTRINGC7_662
 0     16   0    0             @const688
-0     16   0    0    303  4.5  @const689
+0     16   0    0             @const689
  Inline         7    144  2.9  getPortA
- Inline         2    152  4.1  @ITOF
+ Inline         2             @ITOF
 0    119   4   13             @MULFF
- Inline        14      3  0.0  @DIVFF
+ Inline        14             @DIVFF
 0    181   6    4    271  4.4  opcionA
-0      8   0    0      3  0.0  @const700
-0     87   3    5      3  0.0  @PSTRINGCN7_662
-0     21   1    3      3  0.0  @DIV88
- Inline         6    513  2.3  @PRINTF_D_662
-0      6   0    0    505  6.1  @const709
+0      8   0    0             @const700
+0     87   3    5             @PSTRINGCN7_662
+0     21   1    3             @DIV88
+ Inline         6             @PRINTF_D_662
+0      6   0    0             @const709
  Inline         5             @FTOSD
 0     81   3   13             @DIV3232
 0    242   7   13             @PRINTF_L32D_662FPFPF
 1    289   9    1    513  2.3  opcionB
-0      8   0    0      3  0.0  @const719
-0      7   0    0      3  0.0  @const720
-0      8   0    0    467  6.1  @const721
-0      7   0    0    467  6.1  @const722
+0      8   0    0             @const719
+0      7   0    0             @const720
+0      8   0    0             @const721
+0      7   0    0             @const722
 1    694  21    2   3008  5.9  opcionC
-0     13   0    0    467  6.1  @const725
+0     13   0    0             @const725
 0      4   0    0             @const727
 0      5   0    0             @const728
-1    130   4    9    467  6.1  @PRINTF_LD_662
-0      4   0    0    467  6.1  @const731
-0      5   0    0    467  6.1  @const732
+1    130   4    9             @PRINTF_LD_662
+0      4   0    0             @const731
+0      5   0    0             @const732
 0      4   0    0             @const733
 0      5   0    0             @const734
 0      4   0    0             @const735
@@ -77,31 +77,31 @@ Page ROM  %  RAM    Vol Diff  Functions:
 0      5   0    0             @const738
 0      4   0    0             @const739
 0      5   0    0             @const740
-0      4   0    0    235  4.1  @const741
+0      4   0    0             @const741
 0      5   0    0             @const742
 0      4   0    0             @const743
 0      5   0    0             @const744
 1     80   2    0    467  6.1  MAIN
-0      9   0    0    467  6.1  @const750
+0      9   0    0             @const750
  Inline         0             @cinit1
 
 Program metrics:
-    Functions               41
+    Functions               19
     Statements              274
     Comments                348
-    Volume (V)              34647
-    Difficulty (D)          154.4
-    Effort to implement (E) 5350694
-    Time to implement (T)   82 hours, 34 minutes
-    Est Delivered Bugs (B)  10
-    Cyclomatic Complexity   75
-    Maintainability (MI)    56
+    Volume (V)              20654
+    Difficulty (D)          69.7
+    Effort to implement (E) 1438778
+    Time to implement (T)   22 hours, 12 minutes
+    Est Delivered Bugs (B)  4
+    Cyclomatic Complexity   36
+    Maintainability (MI)    108
 
  Segment     Used  Free
 -----------  ----  ----
 00000-00003     4  0  
 00004-0004E    75  0  
-0004F-007FF  1958  11  
+0004F-007FF  1960  9  
 00800-00FFF  1193  855  
 01000-017FF     0  2048  
 01800-01FFF     0  2048  

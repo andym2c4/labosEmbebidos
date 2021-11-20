@@ -292,7 +292,7 @@
    ³     ÃÄlcd_putc  0/50  Ram=1
    ³     ³  ÀÄ*
    ³     ÀÄ@delay_ms1  0/20  Ram=1
-   ÀÄTIMER0_isr  0/373  Ram=0
+   ÀÄTIMER0_isr  0/375  Ram=0
       ÀÄgetPortA  (Inline)  Ram=7
          ÃÄ@ITOF  (Inline)  Ram=2
          ÃÄ@MULFF  0/119  Ram=13

@@ -41,7 +41,6 @@ Las entradas de voltaje al puerto A
 /*
 ---------------------------------Declaracion de Variables----------------------
 */
-int empezar=0;             //variable para la visualizacion del menu principal
 char botonPresionado;      //Variable que guardara el boton presionado
 long lecturaA[8];          // vector para leer valor puertos A con 8 bits
 float voltajeA[8];        // vector para almacenar valor canales como voltaje
@@ -82,24 +81,12 @@ void MCU_Init(){
 
 
 //############################ FUNCIONES ##################################################
-void pantallaBienvenida(){//menu principal, se mostrara de inmediato, al iniciar la alimentacion del circuito
-   /*
-   Mostraremos el mensaje de bienvenida , solicitaremos que el usuario ingrese una opcion, limpiaremos la pantalla
-   y señalaremos en que consiste las opciones a poder ingresar
-   */
-   
-   lcd_putc("\f    Bienvenido  \nElija su opcion: ");
-   delay_ms(700);
-   lcd_putc("\fA. Leer Voltaje\nB. Ver valores");
-   delay_ms(700);
-   lcd_putc("\fC. Info de un\n pin especifico");
-   delay_ms(700);
-}
+
 void getPortA(int n){//lectura del puerto A y convertirlo en voltaje
     set_adc_channel(n);          //selecciona el canal a trabajar
     delay_us(50);                //retardo = 1/10ms=1000/10=50 
     lecturaA[n] = read_adc();    //se almacena los valores en bits
-    voltajeA[n] = lecturaA[n]*5.0/1023.0; //se realiza la conversion a bits
+    voltajeA[n] = lecturaA[n]*5.0/1024.0; //se realiza la conversion a bits
 }
 void opcionA(){
    for(int i=0;i<8;i++){
@@ -198,25 +185,20 @@ void opcionC(){
 void main(){
    MCU_Init();
    while(TRUE){
-      pantallaBienvenida();
-      int empezar=0;
-      while(~empezar){
-         for(int i=0;i<100;i++){
-            lcd_putc("\fIngrese Opcion :");
-            delay_ms(10);
-            botonPresionado = kbd_getc();
-            if(botonPresionado=='A'){
-               opcionA();
-               break;
-            }else if(botonPresionado=='B'){
-               opcionB();
-               break;
-            }else if(botonPresionado=='C'){
-               opcionC();
-               break;
-            }
-         }
-         break;
+      lcd_putc("\fIngrese Opcion :\n A-B-C");
+      botonPresionado = kbd_getc();
+      switch(botonPresionado){
+         case 'A':
+            opcionA();
+            break;
+         case 'B':
+            opcionB();
+            break;
+         case 'C':
+            opcionC();
+            break;
+         default:
+            break;
       }
    }
 }

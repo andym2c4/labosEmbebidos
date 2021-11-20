@@ -99,7 +99,7 @@ void getPortA(int n){//lectura del puerto A y convertirlo en voltaje
     set_adc_channel(n);          //selecciona el canal a trabajar
     delay_us(50);                //retardo = 1/10ms=1000/10=50 
     lecturaA[n] = read_adc();    //se almacena los valores en bits
-    voltajeA[n] = lecturaA[n]*5.0/1023.0; //se realiza la conversion a bits
+    voltajeA[n] = lecturaA[n]*5.0/1024.0; //se realiza la conversion a bits
 }
 void opcionA(){
    for(int i=0;i<8;i++){

@@ -82,24 +82,12 @@ void MCU_Init(){
 
 
 //############################ FUNCIONES ##################################################
-void pantallaBienvenida(){//menu principal, se mostrara de inmediato, al iniciar la alimentacion del circuito
-   /*
-   Mostraremos el mensaje de bienvenida , solicitaremos que el usuario ingrese una opcion, limpiaremos la pantalla
-   y señalaremos en que consiste las opciones a poder ingresar
-   */
-   
-   lcd_putc("\f    Bienvenido  \nElija su opcion: ");
-   delay_ms(700);
-   lcd_putc("\fA. Leer Voltaje\nB. Ver valores");
-   delay_ms(700);
-   lcd_putc("\fC. Info de un\n pin especifico");
-   delay_ms(700);
-}
+
 void getPortA(int n){//lectura del puerto A y convertirlo en voltaje
     set_adc_channel(n);          //selecciona el canal a trabajar
     delay_us(50);                //retardo = 1/10ms=1000/10=50 
     lecturaA[n] = read_adc();    //se almacena los valores en bits
-    voltajeA[n] = lecturaA[n]*5.0/1023.0; //se realiza la conversion a bits
+    voltajeA[n] = lecturaA[n]*5.0/1024.0; //se realiza la conversion a bits
 }
 void opcionA(){
    for(int i=0;i<8;i++){
