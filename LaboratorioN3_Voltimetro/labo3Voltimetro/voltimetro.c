@@ -102,26 +102,30 @@ void getPortA(int n){//lectura del puerto A y convertirlo en voltaje
     voltajeA[n] = lecturaA[n]*5.0/1023.0; //se realiza la conversion a bits
 }
 void opcionA(){
-   for(int i=0;i<8;i++){
+   for(int iA=0;iA<8;iA++){
       //float voltaje=voltajeA[i];
+      for(int jA2=0;jA2<80;jA2++){
       lcd_gotoxy(1,1);
-      printf(lcd_putc,"\f    Voltaje %d",i+1);
+      printf(lcd_putc,"\f    Voltaje %d",iA+1);
       lcd_gotoxy(1,2);
-      printf(lcd_putc,"    %.5f V ",voltajeA[i]);
-      delay_ms(2000);
+      printf(lcd_putc,"    %.5f V ",voltajeA[iA]);
+      delay_ms(30);
+      }
    }
 }
 void opcionB(){
+for(int jB=0;jB<80;jB++){
    lcd_gotoxy(1,1);
    printf(lcd_putc,"\fV1=%fV|V2=%fV",voltajeA[0],voltajeA[1]);
    lcd_gotoxy(1,2);
    printf(lcd_putc,"V3=%fV|V4=%fV",voltajeA[2],voltajeA[3]);
-   delay_ms(1300);
+   delay_ms(30);}
+   for(int jB1=0;jB1<80;jB1++){
    lcd_gotoxy(1,1);
    printf(lcd_putc,"\fV5=%fV|V6=%fV",voltajeA[4],voltajeA[5]);
    lcd_gotoxy(1,2);
    printf(lcd_putc,"V7=%fV|V8=%fV",voltajeA[6],voltajeA[7]);
-   delay_ms(1300);
+   delay_ms(30);}
 }
 void opcionC(){
    int solicitar=1;
@@ -132,60 +136,65 @@ void opcionC(){
       delay_ms(20);
       switch(numero){
          case '1':
-            lcd_gotoxy(1,1);
-            printf(lcd_putc,"\fV1=%fV",voltajeA[0]);
-            lcd_gotoxy(1,2);
-            printf(lcd_putc,"bits=%LdV",lecturaA[0]);
-            delay_ms(2000);
+            for(int iC1=0;iC1<80;iC1++){
+               lcd_gotoxy(1,1);
+               printf(lcd_putc,"\fV1=%fV",voltajeA[0]);
+               lcd_gotoxy(1,2);
+               printf(lcd_putc,"bits=%LdV",lecturaA[0]);
+               delay_ms(30);
+            }
             solicitar=0;
             break;
+         
          case '2':
-            lcd_gotoxy(1,1);
-            printf(lcd_putc,"\fV2=%fV",voltajeA[1]);
-            lcd_gotoxy(1,2);
-            printf(lcd_putc,"bits=%LdV",lecturaA[1]);delay_ms(2000);
+            for(int iC2=0;iC2<80;iC2++){
+               lcd_gotoxy(1,1);
+               printf(lcd_putc,"\fV2=%fV",voltajeA[1]);
+               lcd_gotoxy(1,2);
+               printf(lcd_putc,"bits=%LdV",lecturaA[1]);delay_ms(30);
+            }
             solicitar=0;
             break;
-         case '3':
+         case '3':for(int iC3=0;iC3<80;iC3++){
             lcd_gotoxy(1,1);
             printf(lcd_putc,"\fV3=%fV",voltajeA[2]);
             lcd_gotoxy(1,2);
-            printf(lcd_putc,"bits=%LdV",lecturaA[2]);delay_ms(2000);
+            printf(lcd_putc,"bits=%LdV",lecturaA[2]);delay_ms(30);}
             solicitar=0;
             break;
-         case '4':
+         case '4':for(int iC4=0;iC4<80;iC4++){
             lcd_gotoxy(1,1);
             printf(lcd_putc,"\fV4=%fV",voltajeA[3]);
             lcd_gotoxy(1,2);
-            printf(lcd_putc,"bits=%LdV",lecturaA[3]);delay_ms(2000);
+            printf(lcd_putc,"bits=%LdV",lecturaA[3]);delay_ms(30);}
             solicitar=0;
             break;
-         case '5':
+         case '5':for(int iC5=0;iC5<80;iC5++){
             lcd_gotoxy(1,1);
             printf(lcd_putc,"\fV5=%fV",voltajeA[4]);
             lcd_gotoxy(1,2);
-            printf(lcd_putc,"bits=%LdV",lecturaA[4]);delay_ms(2000);
+            printf(lcd_putc,"bits=%LdV",lecturaA[4]);delay_ms(30);}
             solicitar=0;
             break;
-         case '6':
+         case '6':for(int iC6=0;iC6<80;iC6++){
             lcd_gotoxy(1,1);
             printf(lcd_putc,"\fV6=%fV",voltajeA[5]);
             lcd_gotoxy(1,2);
-            printf(lcd_putc,"bits=%LdV",lecturaA[5]);delay_ms(2000);
+            printf(lcd_putc,"bits=%LdV",lecturaA[5]);delay_ms(30);}
             solicitar=0;
             break;
-         case '7':
+         case '7':for(int iC7=0;iC7<80;iC7++){
             lcd_gotoxy(1,1);
             printf(lcd_putc,"\fV7=%fV",voltajeA[6]);
             lcd_gotoxy(1,2);
-            printf(lcd_putc,"bits=%LdV",lecturaA[6]);delay_ms(2000);
+            printf(lcd_putc,"bits=%LdV",lecturaA[6]);delay_ms(30);}
             solicitar=0;
             break;
-         case '8':
+         case '8':for(int iC8=0;iC8<80;iC8++){
             lcd_gotoxy(1,1);
             printf(lcd_putc,"\fV8=%fV",voltajeA[7]);
             lcd_gotoxy(1,2);
-            printf(lcd_putc,"bits=%LdV",lecturaA[7]);delay_ms(2000);
+            printf(lcd_putc,"bits=%LdV",lecturaA[7]);delay_ms(30);}
             solicitar=0;
             break;
           default:
@@ -201,7 +210,7 @@ void main(){
       pantallaBienvenida();
       int empezar=0;
       while(~empezar){
-         for(int i=0;i<100;i++){
+         for(int iV=0;iV<100;iV++){
             lcd_putc("\fIngrese Opcion :");
             delay_ms(10);
             botonPresionado = kbd_getc();
